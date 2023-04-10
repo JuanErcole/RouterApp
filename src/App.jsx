@@ -5,6 +5,7 @@ import { BlogPage } from './pages/BlogPage'
 import { NotFound } from './pages/NotFound'
 import { MenuNav } from './pages/MenuNav'
 import { PageContainer } from './components/PageContainer'
+import { BlogPost } from './components/BlogPost'
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
