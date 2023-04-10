@@ -29,6 +29,17 @@ const pages = [
   }
 ];
 
+const settings = [
+  {
+    name: 'Login',
+    path: '/login',
+  },
+  {
+    name: 'logout',
+    path: '/logout',
+  }
+];
+
 export const MenuNav = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -167,11 +178,16 @@ export const MenuNav = () => {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {/* {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))} */}
+              {settings.map((setting) => (
+                <NavLink 
+                  to={setting.path}
+                  key={setting.name}
+                >
+                  <MenuItem onClick={handleCloseUserMenu}>
+                    <Typography textAlign="center">{setting.name}</Typography>
+                  </MenuItem>
+                </NavLink>
+              ))}
             </Menu>
           </Box>
         </Toolbar>
