@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import TextField from '@mui/material/TextField'
 import { Button, Grid, Typography } from '@mui/material';
+import { useAuth } from '../hooks/useAuth';
 
 export const LoginPage = () => {
 
@@ -9,22 +10,22 @@ export const LoginPage = () => {
     password : '',
   });
 
+  const { login } = useAuth();
+
   const { username = '', password = '' } = form;
 
   const onInputChange = ({ target }) => {
-
     const { name, value } = target;
-
     setForm({
       ...form,
       [name]: value
     })
-
   }
 
   const onSubmit = (e) => {
 
-    e.preventDefault();
+    e. preventDefault();
+    login(username);
     console.log(username, password);
 
   }

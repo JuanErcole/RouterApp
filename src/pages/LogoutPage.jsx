@@ -3,7 +3,7 @@ import { useAuth } from '../hooks/useAuth';
 
 export const LogoutPage = () => {
   
-  const { user } = useAuth();
+  const user  = useAuth();
 
   console.log(user);
 

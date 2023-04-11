@@ -9,7 +9,6 @@ export const BlogPage = () => {
       <h1>Blog</h1>
       <Outlet/>
 
-
       <ul>
         {
           blogdata.map(post => (
