@@ -17,14 +17,10 @@ export const Navigation = () => {
 
   return (
     <>
-
-
-
-      <MenuNav />
+      { user && <MenuNav /> }
 
       <PageContainer>
         <Routes>
-
           {
             (user)
             ? (
