@@ -3,13 +3,11 @@ import { useAuth } from '../hooks/useAuth';
 
 export const LogoutPage = () => {
   
-  const user  = useAuth();
-
-  console.log(user);
+  const { logout } = useAuth();
 
   const onLogout = (e) =>{
     e.preventDefault();
-    console.log('SAlis');
+    logout();
   }
   
   return (

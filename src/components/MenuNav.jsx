@@ -13,34 +13,40 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
+import { useAuth } from '../hooks/useAuth';
 
 const pages = [
   {
     name: 'Home',
     path: '/',
+    private: false
   },
   {
     name: 'Profile',
     path: '/profile',
+    private: true
   },
   {
     name: 'Blog',
     path: '/blog',
+    private: false
   }
 ];
 
 const settings = [
   {
-    name: 'Login',
-    path: '/login',
-  },
-  {
     name: 'logout',
     path: '/logout',
+    private: true
   }
 ];
 
 export const MenuNav = () => {
+
+  const { user } = useAuth();
+
+  console.log(user);
+
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -111,11 +117,18 @@ export const MenuNav = () => {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page.name} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page.name}</Typography>
-                </MenuItem>
-              ))}
+              {pages.map((page) => {
+
+                if (page.private && !user) return null;
+
+                return (
+                  <MenuItem key={page.name} onClick={handleCloseNavMenu}>
+                    <NavLink to={page.path}>
+                      <Typography textAlign="center">{page.name}</Typography>
+                    </NavLink>
+                  </MenuItem>
+                )
+              })}
             </Menu>
           </Box>
           <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
@@ -138,22 +151,27 @@ export const MenuNav = () => {
             LOGO
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button
-                key={page.name}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                <NavLink
-                  to={page.path}
-                  style={({ isActive }) => ({
-                    color: isActive ? 'blue' : '#fff',
-                  })}
+            {pages.map((page) => {
+
+              if (page.private && !user) return null;
+
+              return (
+                <Button
+                  key={page.name}
+                  onClick={handleCloseNavMenu}
+                  sx={{ my: 2, color: 'white', display: 'block' }}
                 >
-                  {page.name}
-                </NavLink>
-              </Button>
-            ))}
+                  <NavLink
+                    to={page.path}
+                    style={({ isActive }) => ({
+                      color: isActive ? 'blue' : '#fff',
+                    })}
+                  >
+                    {page.name}
+                  </NavLink>
+                </Button>
+              )
+            })}
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
@@ -178,16 +196,22 @@ export const MenuNav = () => {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
-                <NavLink 
-                  to={setting.path}
-                  key={setting.name}
-                >
-                  <MenuItem onClick={handleCloseUserMenu}>
-                    <Typography textAlign="center">{setting.name}</Typography>
-                  </MenuItem>
-                </NavLink>
-              ))}
+              {settings.map((setting) => {
+                
+                if (setting.private && !user) return null;
+                
+                return (
+                  <NavLink
+                    to={setting.path}
+                    key={setting.name}
+                  >
+                    <MenuItem onClick={handleCloseUserMenu}>
+                      <Typography textAlign="center">{setting.name}</Typography>
+                    </MenuItem>
+                  </NavLink>
+                )
+
+              })}
             </Menu>
           </Box>
         </Toolbar>
