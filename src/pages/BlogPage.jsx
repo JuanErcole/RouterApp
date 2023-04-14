@@ -2,11 +2,14 @@ import React from 'react'
 import { BlogLink } from '../components/BlogLink'
 import { blogdata } from '../assets/blogData'
 import { Outlet } from 'react-router-dom'
+import Typography from '@mui/material/Typography'
 
 export const BlogPage = () => {
   return (
     <div>
-      <h1>Blog</h1>
+      <Typography variant="h2" >
+        Blog
+      </Typography>
       <Outlet/>
 
       <ul>
