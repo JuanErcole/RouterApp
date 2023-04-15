@@ -13,6 +13,7 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
+import WidgetsIcon from '@mui/icons-material/Widgets';
 import { useAuth } from '../hooks/useAuth';
 
 const pages = [
@@ -66,7 +67,7 @@ export const MenuNav = () => {
   };
 
   return (
-    <AppBar position="fixed" >
+    <AppBar position="fixed" sx={{ bgcolor:'#45167c' }} >
       <Container maxWidth="xl" >
         <Toolbar disableGutters >
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
@@ -164,7 +165,8 @@ export const MenuNav = () => {
                   <NavLink
                     to={page.path}
                     style={({ isActive }) => ({
-                      color: isActive ? 'blue' : '#fff',
+                      color: isActive ? '#867969' : '#fff',
+                      fontWeight: isActive && '600'
                     })}
                   >
                     {page.name}
@@ -177,7 +179,9 @@ export const MenuNav = () => {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="" />
+                <Avatar variant='rounded' sx={{ bgcolor: '#29445d' }}>
+                  <WidgetsIcon sx={{ color: '#d1ded3' }} />
+                </Avatar> 
               </IconButton>
             </Tooltip>
             <Menu
