@@ -13,7 +13,7 @@ export const BlogPage = () => {
           Blog
         </Typography>
       </Grid>
-      <Grid item xs={12}>
+      <Grid item xs={12} my='15px'>
         <Outlet />
       </Grid>
       <Grid 
@@ -21,6 +21,7 @@ export const BlogPage = () => {
         xs={12} 
         display='flex' 
         justifyContent='center' 
+        gap={1}
       >
         {
           blogdata.map(post => (

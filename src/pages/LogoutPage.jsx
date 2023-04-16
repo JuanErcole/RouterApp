@@ -1,5 +1,6 @@
 import React from 'react'
 import { useAuth } from '../hooks/useAuth';
+import { Button, Grid, Typography } from '@mui/material';
 
 export const LogoutPage = () => {
   
@@ -11,16 +12,26 @@ export const LogoutPage = () => {
   }
   
   return (
-    <>
-      <h1>logout</h1>
+    <Grid
+      container 
+      textAlign='center' 
+      justifyContent='center'
+    >
+      <Grid item xs={12} textAlign='center'>
+        <Typography variant='h3'>
+          Logout
+        </Typography>
+      </Grid>
 
       <form onSubmit={onLogout}>
-        <h3>¿Seguro que quieres salir?</h3>
-        <button type='submit'>
+        <Typography variant='h4' my='30px'>
+          ¿Seguro que quieres salir?
+        </Typography>
+        <Button variant='contained' type='submit'>
           Salir
-        </button>
+        </Button>
       </form>
 
-    </>
+    </Grid>
   )
 }
