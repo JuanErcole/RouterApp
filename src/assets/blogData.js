@@ -34,4 +34,35 @@ const homeData = {
 
 }
 
+const HooksData = [
+  {
+    title: 'useHistory()',
+    slug: 'usehistory',
+    description: ' Devuelve el objeto de historial que se puede usar para navegar a través de la pila de historial del navegador. Puede utilizarse para navegar a una ruta específica, ir hacia atrás o hacia adelante en la pila de historial, entre otras cosas.',
+    imgUsing: 'https://scontent.fcor10-3.fna.fbcdn.net/v/t39.30808-6/342194142_131620646550660_3763288636479533197_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeE2sp0CQ7NIEMaiRZtyd_2_RZ6BkK9awzJFnoGQr1rDMt7yh3KvXFxKjEtd3wz6z8o&_nc_ohc=Ui1eBJfF8FQAX9b30Kd&_nc_ht=scontent.fcor10-3.fna&oh=00_AfANJekw92MoA-5e-D1HY-R7KnzdppGCDBJLIeHLMeDB_Q&oe=6442568D',
+    using: "En este ejemplo, useHistory() devuelve el objeto de historial que se utiliza para navegar a la nueva ruta /ruta-nueva. Cuando el botón se hace clic, handleClick() se ejecuta y llama a history.push('/ruta-nueva'), que navega a la ruta /ruta-nueva.",
+  },
+  {
+    title: 'useLocation()',
+    slug: 'uselocation',
+    description: ' Devuelve un objeto que representa la ubicación actual en la aplicación. Proporciona información como la ruta actual, los parámetros de consulta y el hash de la URL.',
+    imgUsing: 'https://scontent.fcor10-4.fna.fbcdn.net/v/t39.30808-6/341907435_183676114505764_5412253318500794237_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeHSl_sqgHVJDpZ3Bf7jJ_7vo3MWKLJKxK-jcxYoskrEr-Lb5iY9q_covvalQNrbqso&_nc_ohc=M7lbWl1vuPMAX_lqNX7&_nc_ht=scontent.fcor10-4.fna&oh=00_AfAooeIGP98RK4n15YPDqYaZUmxNFW70GDg8LgF2XZ-4Ng&oe=6442BAC2',
+    using: 'En este ejemplo, useLocation() devuelve un objeto que contiene información sobre la ubicación actual. El valor de location.pathname se utiliza para mostrar la ruta actual, el valor de location.search se utiliza para mostrar los parámetros de consulta y el valor de location.hash se utiliza para mostrar el hash de la URL.',
+  },
+  {
+    title: 'useRouteMatch()',
+    slug: 'useroutematch',
+    description: 'Devuelve un objeto que contiene información sobre la coincidencia de la ruta actual con una ruta específica. Se puede utilizar para determinar si una ruta determinada coincide con la URL actual y obtener información sobre los parámetros de la ruta.',
+    imgUsing: 'https://scontent.fcor10-3.fna.fbcdn.net/v/t39.30808-6/342185017_2678108332361168_3935497753326829352_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeHjG1NFZfHeLAmikoImZCMu9Fl3sk5IuCL0WXeyTki4ImLXflb6DJ2ib6itM0UWcq8&_nc_ohc=WIxecvL5M88AX-ie-bQ&_nc_ht=scontent.fcor10-3.fna&oh=00_AfCMbxIqNN_kt647uHe0vAZ00H18HJQ-zQSNE0dziJ7QFQ&oe=6442457A',
+    using: 'En este ejemplo, useRouteMatch() se utiliza para determinar si la URL actual coincide con la ruta /usuarios/:username. Si la ruta no coincide, se muestra un mensaje de error. Si la ruta coincide, match.params.username se utiliza para mostrar la información del perfil del usuario.',
+  },
+  {
+    title: 'useParams()',
+    slug: 'useparams',
+    description: ' Devuelve un objeto con los parámetros de la ruta actual. Si la ruta tiene una sección de parámetros (por ejemplo, /:id), este objeto contendrá el valor del parámetro id.',
+    imgUsing: 'https://scontent.fcor10-3.fna.fbcdn.net/v/t39.30808-6/342205228_1425884581546418_3935563267937338439_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeGcXv3-gGWCjS28UsJZFGGU2wTuLyCYYp3bBO4vIJhinWW9nHqR3CM_7CkABBzPV7c&_nc_ohc=JE4Degj3YlsAX_lo_Wl&_nc_ht=scontent.fcor10-3.fna&oh=00_AfDH7K3hDslwuTuFOF_RGenPdimznPwxk_-UdgjUwn7U9g&oe=6441CBEB',
+    using: 'En este ejemplo, la ruta para este componente es /usuarios/:username. useParams() devuelve un objeto que contiene el parámetro username, que se utiliza para mostrar la información del usuario. Por ejemplo, si la URL es /usuarios/johndoe, useParams() devuelve { username: "johndoe" }.',
+  }
+]
+
 export { blogdata, homeData };
