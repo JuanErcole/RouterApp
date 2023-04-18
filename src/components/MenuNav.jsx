@@ -23,8 +23,8 @@ const pages = [
     private: false
   },
   {
-    name: 'Profile',
-    path: '/profile',
+    name: 'Hooks',
+    path: '/hooks',
     private: true
   },
   {

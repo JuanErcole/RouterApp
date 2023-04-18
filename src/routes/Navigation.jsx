@@ -6,10 +6,11 @@ import { HomePage } from '../pages/HomePage'
 import { BlogPage } from '../pages/BlogPage'
 import { BlogPost } from '../components/BlogPost'
 import { NotFound } from '../pages/NotFound'
-import { ProfilePage } from '../pages/ProfilePage'
 import { LogoutPage } from '../pages/LogoutPage'
 import { LoginPage } from '../pages/LoginPage'
 import { useAuth } from '../hooks/useAuth'
+import { HooksPage } from '../pages/HooksPage'
+import { HookPost } from '../components/HookPost'
 
 export const Navigation = () => {
 
@@ -32,7 +33,11 @@ export const Navigation = () => {
                   </Route>
         
                   <Route path="/logout" element={<LogoutPage />} />
-                  <Route path="/profile" element={<ProfilePage />} />
+
+                  <Route path="/hooks" element={<HooksPage />} >
+                    <Route path=":slug" element={<HookPost />} />
+                  </Route>
+
                   <Route path="*" element={<NotFound />} />
                 </>
               )

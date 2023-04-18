@@ -34,7 +34,7 @@ const homeData = {
 
 }
 
-const HooksData = [
+export const HooksData = [
   {
     title: 'useHistory()',
     slug: 'usehistory',

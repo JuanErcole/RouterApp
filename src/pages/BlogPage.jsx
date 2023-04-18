@@ -1,11 +1,12 @@
 import React from 'react'
-import { BlogLink } from '../components/BlogLink'
+import { CustomLink } from '../components/CustomLink'
 import { blogdata } from '../assets/blogData'
 import { Outlet } from 'react-router-dom'
 import Typography from '@mui/material/Typography'
-import { Button, Grid } from '@mui/material'
+import { Grid } from '@mui/material'
 
 export const BlogPage = () => {
+
   return (
     <Grid container textAlign='center'>
       <Grid item xs={12}>
@@ -25,7 +26,7 @@ export const BlogPage = () => {
       >
         {
           blogdata.map(post => (
-            <BlogLink key={post.title} post={post} />
+            <CustomLink key={post.title} page='blog' post={post} />
           ))
         }
       </Grid>
