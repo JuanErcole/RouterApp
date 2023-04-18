@@ -29,7 +29,7 @@ export const HookPost = () => {
       className={`animate__animated animate__zoomInUp`}
     >
       <Grid item xs={12} >
-        <Typography variant='h3' my='20px'>
+        <Typography variant='h3' my='20px' textAlign='center'>
           {hook.title}
         </Typography>
       </Grid>
@@ -39,6 +39,13 @@ export const HookPost = () => {
           </Typography>
       </Grid>
       {/* Imagen */}
+      <Grid item xs={12} display='flex' justifyContent='center'>
+        <img 
+          src={hook.imgUsing} 
+          alt="ejemplo"
+          style={{maxWidth:'100%'/* , height: 'auto' */}} 
+        />
+      </Grid>
       <Grid item xs={12} p='20px'>
         <Typography variant="h6">
           {hook.using}

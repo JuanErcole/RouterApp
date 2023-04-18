@@ -35,6 +35,7 @@ export const HooksPage = () => {
           item
           xs={12}
           display='flex'
+          flexWrap='wrap'
           justifyContent='center'
           gap={1}
         >
