@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { blogdata } from '../assets/blogData';
 import { Button, Typography, Grid } from '@mui/material';
 import 'animate.css';
+import { useAuth } from '../hooks/useAuth';
 
 export const BlogPost = () => {
   
@@ -10,6 +11,7 @@ export const BlogPost = () => {
 
   const navigate = useNavigate();
   const { slug } = useParams();
+  const auth = useAuth();
 
 
   const post = blogdata.find( p => p.slug === slug)
@@ -58,6 +60,19 @@ export const BlogPost = () => {
           {post.p4}
         </Typography>  
       </Grid>
+
+      {
+        auth.user?.isAdmin &&(
+          <Grid item xs={12} px='20px'>
+            <Button>
+              <Typography >
+                Eliminar Post
+              </Typography>
+            </Button>
+          </Grid>
+        )
+      }
+
     </Grid>
     
 

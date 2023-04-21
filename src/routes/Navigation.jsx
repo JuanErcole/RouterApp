@@ -38,7 +38,7 @@ export const Navigation = () => {
                     <Route path=":slug" element={<HookPost />} />
                   </Route>
 
-                  <Route path="*" element={<NotFound />} />
+                  <Route path="*" element={<HomePage />} />
                 </>
               )
             : (

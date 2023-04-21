@@ -38,7 +38,6 @@ export const HookPost = () => {
             {hook.description}
           </Typography>
       </Grid>
-      {/* Imagen */}
       <Grid item xs={12} display='flex' justifyContent='center'>
         <img 
           src={hook.imgUsing} 
