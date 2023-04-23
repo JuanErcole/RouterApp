@@ -19,7 +19,7 @@ export const HooksPage = () => {
           mb='15px'
         >
           <Typography variant='h3' >
-            Bienvenido <b>{user}</b>
+            Bienvenido <b>{user.username}</b>
           </Typography>
         </Grid>
         <Grid 
